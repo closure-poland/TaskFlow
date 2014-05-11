@@ -109,9 +109,9 @@ shell.context.tasks = function tasks(all){
 shell.context.allTasks = shell.context.tasks.bind(undefined, true);
 shell.context.addTask = function addTask(title, inHours){
 	var taskID = uuid.v4();
-	repository.invoke(FlowTask, taskID, function(task){
+	return repository.invoke(FlowTask, taskID, function(task){
 		task.submit(title, new Date(), new Date((new Date()).getTime() + 3600000 * inHours));
-	}).then(undefined, console.error);
+	});
 };
 shell.context.done = function done(which){
 	return _findAndInvoke(which, function _done(task){

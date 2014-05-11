@@ -24,7 +24,7 @@ node server.js
 ## Interaction API
 
 After executing the command, the user will be presented with a Node.js read-eval-print loop (REPL). From there, JavaScript statements may be executed.
-All functions which modify application state (write, not read-only operations) return a promise (thenable) which fulfills once the operation is carried out and reject on error.
+All functions which modify application state (write, not read-only operations; currently addTask, done, comment, postpone) return a promise (thenable) which fulfills once the operation is carried out and reject on error.
 The following functions of the program are available in the REPL context (so that you can simply type the function name to call it):
 
 ### tasks
